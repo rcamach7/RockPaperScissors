@@ -4,70 +4,63 @@ function computerPlay() {
     return options[Math.floor((Math.random() * 3) + 0)];
 }
 
+let playerWins = 0;
+let computerWins = 0;
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-    // Geared Towards Player
-    // return 1 if player wins
-    // returns -1 if computer wins
+
+    let resultInText = "";
     if (playerSelection == computerSelection) {
-        console.log("Draw: Both picked " + playerSelection);
-        return 0;
+        resultInText = "Draw: Both picked " + playerSelection;
     } else if (playerSelection == "rock" && computerSelection == "paper") {
-        console.log("You Lose! Paper beats Rock");
-        return -1;
+        resultInText = "You Lose round! Paper beats Rock";
+        computerWins++;
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("You Win! Rock beats Scissors");
-        return 1;
+        resultInText = "You Win round! Rock beats Scissors";
+        playerWins++;
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("You Win! Paper beats rock!");
-        return 1;
+        resultInText = "You Win round! Paper beats rock!";
+        playerWins++;
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        console.log("You lose! Scissors beats paper!");
-        return -1;
+        resultInText = "You lose round! Scissors beats paper!";
+        computerWins++;
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("You Win! Scissors beats paper!");
-        return 1;
+        resultInText = "You Win round! Scissors beats paper!";
+        playerWins++;
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("You lose! Rock beats scissors!");
-        return -1;
+        resultInText = "You lose round! Rock beats scissors!";
+        computerWins++;
     } else {
-        return 0;
+        resultInText = "ERROR";
+    }
+    // Print current score in the console
+    let score = "\n\nCurrent Score: Player: " + playerWins + " Computer: " + computerWins + "\n\n";
+
+    // Print score and moves in the player console / website
+    const playerConsoleResult = this.document.getElementById("roundResult").textContent = resultInText;
+    const playerConsoleScore = this.document.getElementById("currentScore").textContent = score;
+
+    // Check to see if there is a winner!
+    checkIfWinner();
+}
+
+function checkIfWinner() {
+    if (playerWins == 5 ) {
+        alert("YOU WIN! CONGRATS!");
+        location.reload(true);
+    } else if (computerWins == 5) {
+        alert("YOU HAVE LOST! COMPUTER WINS");
+        location.reload(true);
     }
 }
 
+// We are adding a event listener to our button "rock", if clicked we simulate a round between user and player 
+const rockBtn = this.document.getElementById("rock")
+rockBtn.addEventListener("click", () =>  playRound("rock", computerPlay()) );
 
-function determineWinner(playerWins, computerWins) {
-    if (playerWins > computerWins) {
-        console.log("YOU HAVE WON! Score: " + playerWins + ":" + computerWins);
-    } else if (computerWins > playerWins) {
-        console.log("YOU HAVE LOST! Score: " + playerWins + ":" + computerWins);
-    } else {
-        console.log("DRAW! Score: " + playerWins + ":" + computerWins);
-    }
-}
+const paperBtn = this.document.getElementById("paper");
+paperBtn.addEventListener("click", () =>  playRound("paper", computerPlay()) );
 
-function game() {
-    // Round Winner Counter
-    let playerWins = 0;
-    let computerWins = 0;
-
-    // Representation of 3 rounds
-    for(let i = 1; i < 4; i++) {
-        const computerSelection = computerPlay(); 
-        const playerSelection = prompt("Enter Your Move");
-        console.log("Round: " + i);
-
-        // Get Results
-        let roundResult = playRound(playerSelection, computerSelection);
-        if (roundResult == 1) {
-            playerWins++;
-        } else if (roundResult == -1) {
-            computerWins++;
-        }
-    }
-    // Prints Out Winner
-    determineWinner(playerWins, computerWins);
-}
-// Play Game
-game();
+const scissorsBtn = this.document.getElementById("scissors");
+scissorsBtn.addEventListener("click", () =>  playRound("scissors", computerPlay()) );

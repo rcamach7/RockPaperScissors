@@ -1,3 +1,36 @@
 html {
     background-color: ivory;
 }
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    border: solid yellow 2px;
+}
+/* Create a flex box for our main container */
+.mainContainer {
+    display: flex;
+}
+
+p {
+    text-align: center;
+}
+/* Give the scale for each button in our main container */
+button {
+    height: 50px;
+    flex: 1;
+}
+
+/* Set Properties for our plater "console" where we will display results */
+
+#playerConsole {
+    height: 125px;
+    border: solid black 2px;
+    text-align: center;
+}
+
+.rules {
+    color: red;
+}

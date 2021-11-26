@@ -4,10 +4,20 @@
         <meta charset="UTF-8">
         <title>War Room</title>
         <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-        <main>
+        <p>Please Select Your Move:</p>
+        <main class="mainContainer">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
         </main>
+        <div id="playerConsole">
+            <p id="roundResult">To begin game, please select your choice</p>
+            <p id="currentScore">Current Score: Player: 0 Computer: 0</p>
+            <p class="rules">First To 5 Rounds Wins The Game!</p>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
