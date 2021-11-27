@@ -12,4 +12,4 @@ The game is played where players deliver hand signals that will represent the el
 
 # Try it!
 
-[This site was built using [GitHub Pages](https://rcamach7.github.io/RockPaperScissors/).]
+This site was built using [GitHub Pages](https://rcamach7.github.io/RockPaperScissors/).
