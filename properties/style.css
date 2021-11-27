@@ -1,0 +1,75 @@
+html {
+    background-color: rgb(93, 147, 197);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.startText {
+    font-weight: bolder;
+    font-size: 70px;
+    margin-bottom: 50px;
+}
+
+/* Create a flex box for our main container */
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+p {
+    text-align: center;
+}
+/* Give the scale for each button in our main container */
+button {
+    height: 300px;
+    width: 300px;
+    padding: 0px;
+
+    /* Removed so buttons can be a specific size, not scaled */
+    /* flex: 1; */
+}
+
+/* Set Properties for our plater "console" where we will display results */
+
+#playerConsole {
+    height: 125px;
+    text-align: center;
+
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.rules {
+    color: yellow;
+}
+
+/* Give Backgrounds to our buttons and their circular shape */
+
+button {
+    border-radius: 50%;
+}
+
+#rock img, #paper img, #scissors img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hover Properties for each buttton */
+#rock:hover {
+    background-color: var(--secondary-dark-hover);
+}
+
+#paper:hover {
+    background-color: var(--secondary-dark-hover);
+}
+
+#scissors:hover {
+    background-color: var(--secondary-dark-hover);
+}
