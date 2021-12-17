@@ -1,18 +1,23 @@
 html {
-    background-color: rgb(93, 147, 197);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("/images/back.jpeg");
+    font-family: "Lucida Grande", serif;
 }
 
 body {
     width: 100%;
     height: 100%;
-    margin: 0 auto;
-    margin-top: 10%;
+    margin: 10% auto 0;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 75px;
 }
 
 .startText {
     font-weight: bolder;
-    font-size: 70px;
+    font-size: 40px;
     margin-bottom: 50px;
 }
 
@@ -23,25 +28,14 @@ body {
     gap: 25px;
 }
 
-p {
-    text-align: center;
-}
 /* Give the scale for each button in our main container */
 button {
     height: 300px;
     width: 300px;
-    padding: 0px;
-
-    /* Removed so buttons can be a specific size, not scaled */
-    /* flex: 1; */
 }
 
-/* Set Properties for our plater "console" where we will display results */
-
+/* Set Properties for our player "console" where we will display results */
 #playerConsole {
-    height: 125px;
-    text-align: center;
-
     font-weight: bolder;
     font-size: 45px;
 }
@@ -51,9 +45,12 @@ button {
 }
 
 /* Give Backgrounds to our buttons and their circular shape */
-
 button {
     border-radius: 50%;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 #rock img, #paper img, #scissors img {
@@ -61,15 +58,9 @@ button {
     height: 100%;
 }
 
-/* Hover Properties for each buttton */
-#rock:hover {
-    background-color: var(--secondary-dark-hover);
-}
-
-#paper:hover {
-    background-color: var(--secondary-dark-hover);
-}
-
-#scissors:hover {
-    background-color: var(--secondary-dark-hover);
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
 }
